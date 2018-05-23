@@ -1,0 +1,22 @@
+# Define the 'local' links for the module
+
+short_url.settings_tab:
+  route_name: short_url.settings
+  title: Settings
+  base_route: short_url.settings
+
+short_url.view:
+  route_name: entity.short_url.canonical
+  base_route: entity.short_url.canonical
+  title: View
+
+short_url.page_edit:
+  route_name: entity.short_url.edit_form
+  base_route: entity.short_url.canonical
+  title: Edit
+
+short_url.delete_confirm:
+  route_name:  entity.short_url.delete_form
+  base_route:  entity.short_url.canonical
+  title: Delete
+  weight: 10

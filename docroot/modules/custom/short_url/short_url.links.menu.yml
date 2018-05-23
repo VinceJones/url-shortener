@@ -1,0 +1,12 @@
+# Define the menu links for this module
+
+entity.short_url.collection:
+  title: 'ShortUrls listing'
+  route_name: entity.short_url.collection
+  description: 'List short_url'
+  weight: 10
+short_url.admin.structure.settings:
+  title: 'ShortUrl settings'
+  description: 'Configure short_url entity'
+  route_name:  short_url.settings
+  parent: system.admin_structure

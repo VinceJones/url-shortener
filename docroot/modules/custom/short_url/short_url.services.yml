@@ -1,0 +1,9 @@
+services:
+  short_url.request_subscriber:
+    class: Drupal\short_url\EventSubscriber\ShortUrlRequestSubscriber
+    arguments: ['@short_url.validation_service']
+    tags:
+      - { name: event_subscriber }
+  short_url.validation_service:
+    class: Drupal\short_url\Service\ShortUrlValidationService
+    arguments: []

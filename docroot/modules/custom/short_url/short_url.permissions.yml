@@ -1,0 +1,10 @@
+'delete short_url entity':
+  title: Delete entity content.
+'add short_url entity':
+  title: Add entity content
+'view short_url entity':
+  title: View entity content
+'edit short_url entity':
+  title: Edit entity content
+'administer short_url entity':
+  title: Administer settings
