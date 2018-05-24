@@ -1,0 +1,58 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.short_url.canonical:
+  path: '/short_url/{short_url}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the short_url entity
+    _entity_view: 'short_url'
+    _title: 'ShortUrl content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'short_url.view'
+
+entity.short_url.collection:
+  path: '/short_url/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the short_url entity.
+    _entity_list: 'short_url'
+    _title: 'ShortUrl list'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view short_url entity'
+
+short_url.add:
+  path: '/short_url/add'
+  defaults:
+  # Calls the form.add controller, defined in the short_url entity.
+    _entity_form: short_url.add
+    _title: 'Add short_url'
+  requirements:
+    _entity_create_access: 'short_url'
+
+entity.short_url.edit_form:
+  path: '/short_url/{short_url}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the short_url entity.
+    _entity_form: short_url.edit
+    _title: 'Edit short_url'
+  requirements:
+    _entity_access: 'short_url.edit'
+
+entity.short_url.delete_form:
+  path: '/short_url/{short_url}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the short_url entity.
+    _entity_form: short_url.delete
+    _title: 'Delete short_url'
+  requirements:
+    _entity_access: 'short_url.delete'
+
+short_url.settings:
+  path: '/admin/structure/short_url_settings'
+  defaults:
+    _form: '\Drupal\short_url\Form\ShortUrlSettingsForm'
+    _title: 'ShortUrl settings'
+  requirements:
+    _permission: 'administer short_url entity'

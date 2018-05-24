@@ -1,0 +1,11 @@
+# All action links for this module
+
+short_url.add:
+  # Which route will be called by the link
+  route_name: short_url.add
+  title: 'Add short_url'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.short_url.collection
+    - entity.short_url.canonical

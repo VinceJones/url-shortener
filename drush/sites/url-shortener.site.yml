@@ -1,0 +1,6 @@
+local:
+    root: /var/www/url-shortener/docroot
+    uri: 'http://local.url-shortener.com'
+    host: local.url-shortener.com
+    user: vagrant
+    ssh: { options: '-o PasswordAuthentication=no -i $HOME/.vagrant.d/insecure_private_key' }
