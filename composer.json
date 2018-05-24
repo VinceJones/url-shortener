@@ -5,7 +5,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "acquia/blt": "^9.0.3"
+        "acquia/blt": "8.9.14"
     },
     "require-dev": {
         "geerlingguy/drupal-vm": "^4.8"
@@ -49,8 +49,8 @@
         },
         "merge-plugin": {
             "require": [
-                "blt/composer.required.json",
-                "blt/composer.suggested.json"
+                "vendor/acquia/blt/composer.required.json",
+                "vendor/acquia/blt/composer.suggested.json"
             ],
             "merge-extra": true,
             "merge-extra-deep": true,
