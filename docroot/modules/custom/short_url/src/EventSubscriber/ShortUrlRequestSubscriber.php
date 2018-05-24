@@ -52,7 +52,7 @@ class ShortUrlRequestSubscriber implements EventSubscriberInterface {
       return;
     }
 
-    if (empty($this->validation_service->getShortUrlEntityByPath($path))) {
+    if (empty($results = $this->validation_service->getShortUrlEntityByPath($path))) {
       return;
     }
 
