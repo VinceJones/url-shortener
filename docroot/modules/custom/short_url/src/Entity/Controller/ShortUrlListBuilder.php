@@ -77,9 +77,6 @@ class ShortUrlListBuilder extends EntityListBuilder {
     $header['original_url'] = $this->t('Original URL');
     $header['hit_count'] = $this->t('Hit Count');
 
-    // Add Operations
-//    $header = $header + parent::buildHeader();
-
     return $header;
   }
 
@@ -88,21 +85,23 @@ class ShortUrlListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
 
-    $site_url = Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
+    $options = [
+      'absolute' => TRUE,
+    ];
+
+    $site_url = Url::fromRoute('<front>', [], $options)->toString();
+
+    /** @var \Drupal\short_url\Entity\ShortUrl $entity */
     $short_url = $site_url . $entity->short_url->value;
     $url_link = "<a href='$short_url'>$short_url</a>";
 
     $url = new GeneratedLink();
     $url->setGeneratedLink($url_link);
 
-
     /* @var $entity \Drupal\short_url\Entity\ShortUrl */
     $row['short_url'] = $url;
     $row['original_url'] = $entity->get('original_url')->value;
     $row['hit_count'] = $entity->get('hit_count')->value;
-
-    // Add Operations
-//    $row = $row + parent::buildRow($entity);
 
     return $row;
   }
