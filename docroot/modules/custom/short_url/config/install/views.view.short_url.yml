@@ -1,0 +1,126 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - short_url
+id: short_url
+label: 'Short Url'
+module: views
+description: ''
+tag: ''
+base_table: short_url
+base_field: id
+core: 8.x
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: mini
+        options:
+          items_per_page: 10
+          offset: 0
+          id: 0
+          total_pages: null
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
+      style:
+        type: default
+        options:
+          row_class: 'col-sm-6 col-md-6 col-xs-12 content-box'
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:short_url'
+      fields:
+        name:
+          table: short_url
+          field: name
+          id: name
+          entity_type: null
+          entity_field: null
+          plugin_id: null
+          exclude: false
+      filters: {  }
+      sorts:
+        created:
+          id: created
+          table: short_url
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: short_url
+          entity_field: created
+          plugin_id: date
+      title: 'Short Url'
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+      use_ajax: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - user
+      tags: {  }
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: short-url
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - user
+      tags: {  }
