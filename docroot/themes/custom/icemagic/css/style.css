@@ -436,3 +436,6 @@ header#navbar .aqua-scrolled {
 .footer-wrap .footer-social a {
   font-size: 1.1em;
 }
+.mix-shortUrlDesc {
+  word-break: break-all;
+}
