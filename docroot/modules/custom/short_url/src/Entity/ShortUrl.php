@@ -18,6 +18,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
  *   label = @Translation("Short URL"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *     "list_builder" = "Drupal\short_url\Entity\Controller\ShortUrlListBuilder",
  *     "form" = {
  *       "add" = "Drupal\short_url\Form\ShortUrlForm",
