@@ -56,3 +56,7 @@ short_url.settings:
     _title: 'ShortUrl settings'
   requirements:
     _permission: 'administer short_url entity'
+
+short_url.views_list:
+  path: '/short-url'
+

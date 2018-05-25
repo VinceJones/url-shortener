@@ -77,7 +77,7 @@ class ShortUrlForm extends ContentEntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
 
-    $form_state->setRedirect('entity.short_url.collection');
+    $form_state->setRedirect('short_url.views_list');
 
     /** @var \Drupal\short_url\Entity\ShortUrl $entity */
     $entity = $this->getEntity();
