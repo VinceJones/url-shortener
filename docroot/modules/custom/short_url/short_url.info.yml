@@ -1,4 +1,4 @@
 name: Short Url
 type: module
-description: Defines the short_url entity
+description: Defines the short_url entity and handles short_url operations
 core: 8.x
