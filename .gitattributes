@@ -17,7 +17,7 @@
 #   - Fix automatically with `git apply --whitespace=fix`.
 
 # Auto-detect text files, ensure they use LF.
-*         text=auto eol=lf
+*         text=auto
 
 *.css     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 *.engine  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
@@ -35,7 +35,6 @@
 *.script  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 *.sh      text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
 *.sql     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
-*.svg     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
 *.test    text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
 *.theme   text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2 diff=php
 *.txt     text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=2
@@ -45,37 +44,35 @@
 # Define binary file attributes.
 # - Do not treat them as text.
 # - Include binary diff in patches instead of "binary files differ."
-*.gif     -text diff
-*.GIF     -text diff
-*.gz      -text diff
-*.GZ      -text diff
-*.ico     -text diff
-*.ICO     -text diff
-*.jpg     -text diff
-*.JPG     -text diff
-*.png     -text diff
-*.PNG     -text diff
-*.phar    -text diff
-*.PHAR    -text diff
-*.exe     -text diff
-*.EXE     -text diff
-*.ttf     -text diff
-*.TTF     -text diff
-*.otf     -text diff
-*.OTF     -text diff
-*.eot     -text diff
-*.EOT     -text diff
-*.woff    -text diff
-*.woff2   -text diff
-*.WOFF2   -text diff
-*.swf     -text diff
-*.SWF     -text diff
-*.db      -text diff
-*.DB      -text diff
-*.tar     -text diff
-*.tgz     -text diff
-*.TAR     -text diff
-*.pdf     -text diff
-*.PDF     -text diff
-*.jar     -text diff
-*.JAR     -text diff
+*.gif     binary
+*.GIF     binary
+*.gz      binary
+*.GZ      binary
+*.ico     binary
+*.ICO     binary
+*.jpg     binary
+*.JPG     binary
+*.png     binary
+*.PNG     binary
+*.phar    binary
+*.PHAR    binary
+*.exe     binary
+*.EXE     binary
+*.ttf     binary
+*.TTF     binary
+*.otf     binary
+*.OTF     binary
+*.eot     binary
+*.EOT     binary
+*.woff2   binary
+*.WOFF2   binary
+*.swf     binary
+*.SWF     binary
+*.db      binary
+*.DB      binary
+*.tar     binary
+*.TAR     binary
+*.pdf     binary
+*.PDF     binary
+*.jar     binary
+*.JAR     binary

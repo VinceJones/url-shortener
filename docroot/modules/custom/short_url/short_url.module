@@ -1,6 +1,39 @@
 <?php
+use Drupal\Core\Url;
 
 /**
  * @file
  * Contains Drupal\short_url\short_url.module.
  */
+
+/**
+ * Implements hook_theme().
+ */
+function short_url_theme($existing, $type, $theme, $path) {
+  return [
+    'short_url' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_HOOK().
+ */
+function template_preprocess_short_url(array &$variables) {
+
+  if (empty($variables['elements'])) {
+    return;
+  }
+
+  /** @var \Drupal\short_url\Entity\ShortUrl $entity */
+  if (empty($entity = $variables['elements']['#short_url'])) {
+    return;
+  }
+
+  $site_url = Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
+
+  $variables['short_url'] = $site_url . $entity->get('short_url')->value;
+  $variables['original_url'] = $entity->get('original_url')->value;
+  $variables['hit_count'] = $entity->get('hit_count')->value;
+}
